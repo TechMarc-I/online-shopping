@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>The Marc-IT</title>
+{% endblock %}
+
+{%block body %}
+<div class="container">
+    <div class="item_block" id="keyboard">
+        
+        <form action='/' method='POST'>
+            <input type="text" value="Keyboard" name="item" />
+            <input type="text" value="$49.99" name="price" />
+            <img src="../static/images/keyboard.jpeg" alt="Keyboard" id="keyboard_img" class="pic" />   
+            <input type='submit' value='Add To Cart' />
+        </form>
+    </div>
+
+    <div class="item_block" id="monitor">
+        
+        <form action='/' method='POST'>
+            <input type="text" value="Monitor" name="item" />
+            <input type="text" value="$99.99" name="price" />
+            <img src="../static/images/monitor.png" alt="Monitor" id="monitor_image" class="pic" />   
+            <input type='submit' value='Add To Cart' />
+        </form>
+    </div>
+
+    <div class="item_block" id="mouse">
+        
+        <form action='/' method='POST'>
+            <input type="text" value="Mouse" name="item" />
+            <input type="text" value="$9.95" name="price" />
+            <img src="../static/images/mouse.png" alt="Mouse" id="mouse_image" class="pic" />   
+            <input type='submit' value='Add To Cart' />
+        </form>
+    </div>
+
+    <div class="item_block" id="ethernet">
+        
+        <form action='/' method='POST'>
+            <input type="text" value="Ethernet Cable" name="item" />
+            <input type="text" value="$2.99" name="price" />
+            <img src="../static/images/ethernet.jpeg" alt="Ethernet Cable" id="ethernet_image" class="pic" />   
+            <input type='submit' value='Add To Cart' />
+        </form>
+    </div>
+
+    <div class="item_block" id="router">
+        
+        <form action='/' method='POST'>
+            <input type="text" value="Router" name="item" />
+            <input type="text" value="$74.99" name="price" />
+            <img src="../static/images/router.png" alt="Router" id="Router_image" class="pic" />   
+            <input type='submit' value='Add To Cart' />
+        </form>
+    </div>
+</div>
+
+<form action='/cart' method='POST'>
+    <input type="submit" value="Proceed to Checkout" />
+</form>
+{% endblock %}
+

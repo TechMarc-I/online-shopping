@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>The Marc-IT Cart</title>
+{% endblock %}
+
+{% block body %}
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+    {% for item in items %}
+        <tr>
+            <td>{{ cart.item }}</td>
+            <td>{{ cart.price }}</td>
+            <td>
+                <a href="/delete/{{task.id}}">Delete</a>
+                <br/>
+                <a href="/update/{{task.id}}">Update</a>
+            </td>
+
+        </tr>
+    {% endfor %}
+</table>
+
+<form action='/cart' method = 'POST'>
+    <input type="submit" value="Checkout" />
+</form>
+{% endblock%}
