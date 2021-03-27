@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block body %}
+<h1>Cart</h1>
+<div class="table_container">
 <table>
     <tr>
         <th>Item</th>
@@ -13,8 +15,8 @@
     </tr>
     {% for item in items %}
         <tr>
-            <td>{{ cart.item }}</td>
-            <td>{{ cart.price }}</td>
+            <td>{{ item[0] }}</td>
+            <td>{{ price[0] }}</td>
             <td>
                 <a href="/delete/{{task.id}}">Delete</a>
                 <br/>
@@ -24,6 +26,7 @@
         </tr>
     {% endfor %}
 </table>
+</div>
 
 <form action='/cart' method = 'POST'>
     <input type="submit" value="Checkout" />

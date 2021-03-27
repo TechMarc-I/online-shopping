@@ -47,21 +47,22 @@ def delete(id):
 
 @app.route('/cart', methods=['GET', 'POST'])
 def view_cart():
-    items = cart.query.with_entries(cart.item).all()
+    #items = cart.query.with_entries(cart.item).all()
     #prices = db.session.query.with_entires(cart.price).all()
 
-    return render_template('checkout.html', items=items, prices=prices)
+    return render_template('checkout.html')
 
 #CHECKOUT
 @app.route('/cart', methods=['GET', 'POST'])
-def checkout():
+def checkout(items):
     items = cart.query.get_or_404.all(items)
     if request.method == 'POST':
 
         try:
             db.session.delete.all()
             db.session.commit()
-            return "Your order has been submitted successfully"
+            #return "Your order has been submitted successfully"
+            return redirect('/')
         except:
             return "There was an issue submitting your order"
     else:
